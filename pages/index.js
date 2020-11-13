@@ -12,7 +12,7 @@ export async function getStaticProps() {
   {
     environments.map((target) => {
       const key = getEnvKey(target);
-      props[key] = process.env[key];
+      props[key] = process.env[key] || "Not set";
     });
   }
   return { props };
